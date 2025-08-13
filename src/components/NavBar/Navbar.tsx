@@ -21,7 +21,7 @@ export default function Navbar({ openNav }: props) {
   }, [])
 
   const pathname = usePathname()
-  const bgClass = pathname === '/' ? (navBg ? 'bg-blue-950 shadow-lg' : 'bg-transparent') : 'bg-transparent'
+  const bgClass = pathname === '/' ? (navBg ? 'bg-[#FF6A1A] text-white shadow-lg' : 'bg-transparent') : 'bg-transparent'
   return (
     <div className={` fixed w-full transition-all duration-300 h-[12vh] z-[1000] ${bgClass}`}>
       <div className="flex justify-between items-center mx-auto h-full w-[95%] lg:w-[90%]">
@@ -33,9 +33,9 @@ export default function Navbar({ openNav }: props) {
         {/* navLinks */}
         <div className="hidden lg:flex items-center space-x-8">
           <Link href="/">Home</Link>
-          <Link href="/about">Shop</Link>
-          <Link href="/services">About</Link>
-          <Link href="/contact">Block</Link>
+          <Link href="/">Shop</Link>
+          <Link href="/">About</Link>
+          <Link href="/blog">Blog</Link>
         </div>
         <div className="flex items-center space-x-4">
 

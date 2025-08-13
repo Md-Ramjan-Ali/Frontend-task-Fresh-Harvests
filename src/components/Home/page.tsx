@@ -3,6 +3,7 @@ import Hero from './Hero/Hero'
 import AboutUs from './AboutUs/AboutUs'
 import SpecialOffer from './SpecialOffer/SpecialOffer'
 import Testimonial from './Testimonial/Testimonial'
+import BlogPage from '@/app/blog/page'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutUs />
       <SpecialOffer />
       <Testimonial />
+      <BlogPage />
     </div>
   )
 }
