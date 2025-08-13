@@ -41,6 +41,7 @@ export default function Navbar({ openNav }: props) {
 
           <button className={`px-4 py-2 ${navBg ? 'bg-white text-black' : 'bg-transparent '} rounded-lg font-medium flex items-center gap-1 cursor-pointer hover:text-rose-500`}>favorite</button>
           <button className={`px-4 py-2 ${navBg ? 'bg-white text-black' : 'bg-transparent '} rounded-lg font-medium flex items-center gap-1 cursor-pointer hover:text-rose-500`}>cart</button>
+         
           <button className={`px-4 py-2 ${navBg ? 'bg-white text-black' : 'bg-transparent '} rounded-lg font-medium flex items-center gap-1 cursor-pointer hover:text-rose-500 border-1 border-white`}>sign in</button>
           {/* Hamburger Menu (Mobile) */}
           <RxHamburgerMenu onClick={openNav} className='w-7 h-7 lg:hidden text-2xl cursor-pointer' />
