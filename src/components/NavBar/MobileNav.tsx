@@ -2,14 +2,29 @@ import React from 'react'
 import Link from 'next/link'
 import { MdClose } from 'react-icons/md'
 import { FaHeart } from 'react-icons/fa'
+import { signOut, useSession } from 'next-auth/react'
+import { toast } from 'react-toastify'
 
 
 type props = {
   showNav: boolean,
   closeNav: () => void
+  onProfileClick: () => void;
 }
-export default function MobileNav({ closeNav, showNav }: props) {
+export default function MobileNav({ closeNav, showNav,
+  onProfileClick, }: props) {
+  const { data: session } = useSession();
   const navOpen = showNav ? 'translate-x-0' : 'translate-x-[-100%]'
+
+  const handleProfileClick = () => {
+    onProfileClick();
+    closeNav();
+  };
+  const handleLogOut = async () => {
+    await signOut({ callbackUrl: '/' });
+    toast.success('Logged out successfully!');
+    closeNav();
+  };
   return (
     <div>
       {/* overLay */}
@@ -25,7 +40,27 @@ export default function MobileNav({ closeNav, showNav }: props) {
         <div className="text-white flex flex-col justify-center items-center space-y-5">
           <button className='flex gap-2 items-center text-lg'><FaHeart size={18} />
             Favorite</button>
-          <button className='text-lg text-white border-1 px-4 py-2 rounded-xl'>Sign in</button>
+          {session ? (
+            <>
+              <button
+                onClick={handleProfileClick}
+                className="text-lg text-white border-1 px-4 py-2 rounded-xl"
+              >
+                Profile
+              </button>
+              <button
+                onClick={handleLogOut}
+                className="text-lg text-white border-1 px-4 py-2 rounded-xl"
+              >
+
+                Log out
+              </button>
+            </>
+          ) : (
+            <button className="text-lg text-white border-1 px-4 py-2 rounded-xl">
+              Sign in
+            </button>
+          )}
         </div>
         {/* close btn */}
         <MdClose onClick={closeNav} className='absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6 text-white' />
