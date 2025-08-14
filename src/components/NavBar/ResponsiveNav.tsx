@@ -9,7 +9,7 @@ export default function ResponsiveNav() {
   const handleShowNav = () => setShowNav(true);
   const handleCloseNav = () => setShowNav(false)
   return (
-    <div>
+    <div className='overflow-hidden'>
       <Navbar openNav={handleShowNav}></Navbar>
       <MobileNav showNav={showNav} closeNav={handleCloseNav}></MobileNav>
     </div>
