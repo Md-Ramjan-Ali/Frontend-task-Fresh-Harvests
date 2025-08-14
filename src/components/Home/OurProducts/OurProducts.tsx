@@ -25,7 +25,7 @@ export default function OurProducts() {
         </div>
 
         {/* Category Buttons */}
-        <div className="flex  gap-4 mb-6">
+        <div className="lg:flex  gap-4 mb-6 hidden">
           <button
             onClick={() => setSelectedCategory(null)}
             className={`px-4 py-2 rounded border ${selectedCategory === null ? "bg-green-500 text-white" : ""

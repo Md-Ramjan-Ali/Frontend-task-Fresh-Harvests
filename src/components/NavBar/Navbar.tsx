@@ -75,9 +75,7 @@ export default function Navbar({ openNav }: props) {
                 3
               </span>
             </div>
-
-            {/* Cart text */}
-            Cart
+            <span className='hidden md:flex'> Cart</span>
           </button>
 
           <button
