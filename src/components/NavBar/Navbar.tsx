@@ -30,7 +30,7 @@ export default function Navbar({ openNav }: props) {
   const linkClass = (href: string) =>
     pathname === href
       ? ' font-semibold border-b-3 border-green-500 pb-1'
-      : 'hover:text-green-400'
+      : 'hover:text-[#749b3f]'
   return (
     <div className={` fixed w-full transition-all duration-300 h-[12vh] z-[1000] ${bgClass}`}>
       <div className="flex justify-between items-center mx-auto h-full w-[95%] lg:w-[90%]">
@@ -57,18 +57,18 @@ export default function Navbar({ openNav }: props) {
 
         <div className="flex items-center space-x-1">
           <button
-            className={`px-4 py-2 hidden lg:flex rounded-lg font-medium  lg:items-center gap-1 cursor-pointer hover:text-rose-500 ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-black bg-white'}`}
+            className={`px-4 py-2 hidden lg:flex rounded-lg font-medium  lg:items-center gap-1 cursor-pointer hover:text-[#FF6A1A] ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-black bg-white'}`}
           >
-            <FaHeart size={18} className={`  ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-[#749b3f] bg-white'} `} />
+            <FaHeart size={18} className={`  ${pathname === '/' && !navBg ? 'text-white hover:text-[#FF6A1A] bg-transparent' : 'text-[#749b3f] hover:text-[#FF6A1A] bg-white'} `} />
             Favorite
           </button>
 
           <button
-            className={`relative px-4 py-2 rounded-lg font-medium flex items-center gap-2 cursor-pointer hover:text-rose-500  ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-black bg-white'}`}
+            className={`relative px-4 py-2 rounded-lg font-medium flex items-center gap-2 cursor-pointer hover:text-[#FF6A1A]  ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-black bg-white'}`}
           >
             {/* Cart Icon */}
             <div className="relative">
-              <FaCartShopping size={22} className={`  ${pathname === '/' && !navBg ? 'text-white bg-transparent' : 'text-[#749b3f] bg-white'} `} />
+              <FaCartShopping size={22} className={`  ${pathname === '/' && !navBg ? 'text-white bg-transparent hover:text-[#FF6A1A]' : 'text-[#749b3f]  hover:text-[#FF6A1A] bg-white'} `} />
 
               {/* Badge */}
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
@@ -79,6 +79,7 @@ export default function Navbar({ openNav }: props) {
           </button>
 
           <button
+
             className={`px-4 py-2 hidden lg:flex border rounded-lg font-medium  lg:items-center gap-1 cursor-pointer hover:text-rose-500 ${pathname === '/' && !navBg ? 'text-white bg-transparent border-white' : 'text-black bg-white border-black'}`}
           >
             sign in

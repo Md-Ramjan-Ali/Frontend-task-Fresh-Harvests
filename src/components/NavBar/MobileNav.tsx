@@ -14,7 +14,7 @@ export default function MobileNav({ closeNav, showNav }: props) {
     <div>
       {/* overLay */}
       <div className={`fixed lg:hidden ${navOpen} inset-0 transform transition-all duration-500 z-[1002] h-screen bg-black opacity-70 w-full`}></div>
-      <div className={` lg:hidden ${navOpen} flex flex-col justify-center space-y-5 fixed transform transition-all bg-rose-500 duration-500 delay-300 w-[80%] sm:w-[60%] h-full z-[1050]`}>
+      <div className={` lg:hidden ${navOpen} flex flex-col justify-center space-y-5 fixed transform transition-all bg-[#FF6A1A] duration-500 delay-300 w-[80%] sm:w-[60%] h-full z-[1050]`}>
         {/* navLinks */}
         <div className="flex flex-col items-center justify-center space-y-5 text-white text-lg overflow-hidden">
           <Link className="text-white text-lg" href="/">Home</Link>

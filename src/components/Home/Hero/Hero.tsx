@@ -25,7 +25,7 @@ export default function Hero() {
             At Fresh Harvests, we are passionate about providing you with the
             freshest and most flavorful fruits and vegetables.
           </p>
-          <button className="px-6 py-3 bg-[#FF6A1A] text-white font-semibold rounded hover:bg-orange-600 transition">
+          <button className="px-6 py-3 bg-[#FF6A1A] text-white font-semibold rounded hover:bg-orange-600 transition cursor-pointer">
             Shop Now
           </button>
 

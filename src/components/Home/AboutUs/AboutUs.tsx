@@ -3,52 +3,23 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto px-4 lg:px-12 py-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+    <section className="max-w-screen-xl mx-auto px-4 lg:-mt-32 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-12 pb-10">
 
       {/* Left Image with floating cards */}
-      <div className="relative w-full lg:w-1/2 flex justify-center">
-        {/* Background Circle */}
-        <div className="absolute w-[300px] h-[300px] bg-[#749b3f] rounded-full -z-10 bottom-7"></div>
-
+      <div className="relative w-full lg:flex-1 flex justify-center">
+      
         {/* Main Image */}
         <Image
-          src="/images/fresh-fruits.png" // replace with your image
+          src="/images/fresh-fruits.png"
           alt="Man with vegetables"
-          width={450}
-          height={450}
-          className="relative z-10"
+          width={500}
+          height={500}
+          className="relative -z-20"
         />
-
-        {/* Floating Fresh Harvest Logo */}
-        {/* <div className="absolute bottom-16 left-0 bg-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
-          <Image
-            src="/images/logo-icon.png" // replace with your logo
-            alt="Fresh Harvest Logo"
-            width={24}
-            height={24}
-          />
-          <span className="font-semibold">Fresh Harvests</span>
-        </div> */}
-
-        {/* Floating Product Card */}
-        {/* <div className="absolute bottom-0 right-0 bg-white p-3 rounded-lg shadow-lg w-[140px]">
-          <Image
-            src="/images/fresh-fruits.png" // replace with product image
-            alt="Mushroom"
-            width={100}
-            height={100}
-            className="rounded-lg"
-          />
-          <p className="text-sm font-medium mt-2">Mushroom</p>
-          <p className="text-xs text-gray-500">$2.3/kg</p>
-          <button className="mt-2 text-xs w-full border rounded py-1 hover:bg-orange-50">
-            Add to cart
-          </button>
-        </div> */}
       </div>
 
       {/* Right Content */}
-      <div className="w-full lg:w-1/2 space-y-6">
+      <div className="w-full lg:w-2/5 space-y-6">
         {/* Top Button */}
         <div>
           <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
@@ -72,7 +43,7 @@ export default function AboutUs() {
         </p>
 
         {/* Read More Button */}
-        <button className="border-2 border-orange-500 text-orange-500 px-6 py-2 rounded hover:bg-orange-500 hover:text-white transition">
+        <button className="border-2 border-[#FF6A1A] text-[#FF6A1A] px-6 py-2 rounded hover:bg-[#FF6A1A] hover:text-white transition cursor-pointer">
           Read More
         </button>
       </div>

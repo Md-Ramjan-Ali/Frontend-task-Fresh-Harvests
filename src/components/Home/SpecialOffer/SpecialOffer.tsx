@@ -39,7 +39,7 @@ export default function SpecialOffer() {
   }, []);
 
   return (
-    <section className="bg-gray-400 pl-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <section className=" bg-[url('/images/offer-bg.png')] bg-cover bg-center bg-no-repeat pl-6 flex flex-col md:flex-row items-center justify-between gap-6">
       {/* Left Side */}
       <div className="flex-1 ">
         <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
