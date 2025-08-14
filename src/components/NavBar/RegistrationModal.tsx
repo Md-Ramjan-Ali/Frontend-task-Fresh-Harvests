@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface RegistrationModalProps {
@@ -24,6 +27,7 @@ export default function RegistrationModal({
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -66,6 +70,7 @@ export default function RegistrationModal({
         setError(errorData.message || "Registration failed");
       }
     } catch (err) {
+      console.log(err);
       setError("Network error. Please try again.");
     } finally {
       setLoading(false);
@@ -78,7 +83,8 @@ export default function RegistrationModal({
     <div className="fixed inset-0 bg-[#000000bf] flex items-center justify-center z-[2000]">
       <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-gray-800">Sign Up</h2>
+          <h1></h1>
+          <h2 className="text-xl lg:text-2xl font-bold text-gray-800 text-center">Sign Up</h2>
           <button
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700"
@@ -131,15 +137,23 @@ export default function RegistrationModal({
             >
               Password
             </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF6A1A]"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF6A1A]"
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-3 cursor-pointer text-gray-500"
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </span>
+            </div>
           </div>
 
           {error && (
@@ -155,13 +169,30 @@ export default function RegistrationModal({
           </button>
         </form>
 
+        {/* Divider */}
+        <div className="flex items-center my-4">
+          <hr className="flex-grow border-gray-300" />
+          <span className="mx-2 text-gray-500 text-sm">Or Sign in with</span>
+          <hr className="flex-grow border-gray-300" />
+        </div>
+
+        {/* Social Buttons */}
+        <div className="flex gap-4">
+          <button className="flex-1 flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-2 hover:bg-gray-50">
+            <FcGoogle className="text-red-500" /> Google
+          </button>
+          <button className="flex-1 flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-2 hover:bg-gray-50">
+            <FaFacebook className="text-blue-600" /> Facebook
+          </button>
+        </div>
+
         <div className="mt-4 text-center">
           <span className="text-gray-600">
             Already have an account?{" "}
           </span>
           <button
             onClick={onSwitchToLogin}
-            className="text-[#FF6A1A] hover:text-[#e55a15] font-medium"
+            className="text-[#FF6A1A] hover:text-[#e55a15] font-medium cursor-pointer"
           >
             Log In
           </button>

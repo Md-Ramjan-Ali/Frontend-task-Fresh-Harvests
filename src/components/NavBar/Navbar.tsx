@@ -147,7 +147,7 @@ export default function Navbar({ openNav, onProfileClick }: props) {
           ) : (
             <button
               onClick={() => setIsRegistrationModalOpen(true)}
-              className={`px-4 py-2 hidden lg:flex border rounded-lg font-medium  lg:items-center gap-1 cursor-pointer hover:text-rose-500 ${pathname === "/" && !navBg
+              className={`px-4 py-2 hidden lg:flex border border-gray-300 rounded-lg font-medium  lg:items-center gap-1 cursor-pointer hover:text-rose-500 ${pathname === "/" && !navBg
                 ? "text-white bg-transparent border-white"
                 : "text-black bg-white border-black"
                 }`}

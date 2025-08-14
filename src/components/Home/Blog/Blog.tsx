@@ -18,10 +18,10 @@ interface BlogSectionProps {
 
 const Blog: FC<BlogSectionProps> = ({ blogs }) => {
   return (
-    <section className="pb-16 pt-24 bg-white">
+    <section className="pb-16 pt-30 bg-white ">
       {/* Section Header */}
-      <div className="max-w-screen-xl mx-auto">
-        <div className="text-center ">
+      <div className="max-w-screen-xl mx-auto relative">
+        <div className="text-center px-3">
           <span className="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold">
             Our Blog
           </span>
@@ -35,7 +35,7 @@ const Blog: FC<BlogSectionProps> = ({ blogs }) => {
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12 px-3 xl:px-0">
           {blogs.map((blog) => (
             <div key={blog.id} className="rounded-lg overflow-hidden shadow-sm bg-white">
               <div className="relative w-full h-56">
@@ -63,6 +63,9 @@ const Blog: FC<BlogSectionProps> = ({ blogs }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="absolute top-0 right-0 lg:top-10 lg:right-30 z-10 hidden lg:flex">
+          <Image src="/images/pata.png" width={70} height={70} alt='pata' />
         </div>
       </div>
     </section>

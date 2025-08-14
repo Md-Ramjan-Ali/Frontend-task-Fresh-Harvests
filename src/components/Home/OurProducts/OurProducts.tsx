@@ -8,11 +8,9 @@ export default function OurProducts() {
   const router = useRouter();
   const { data: categories = [], isLoading: catLoading } = useGetCategoriesQuery();
   const { data: products = [], isLoading: prodLoading } = useGetAllProductsQuery();
-
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   if (catLoading || prodLoading) return <p>Loading...</p>;
-
 
   const filteredProducts = selectedCategory
     ? products.filter((p) => p.categoryId === selectedCategory)
@@ -78,7 +76,7 @@ export default function OurProducts() {
         )}
       </div>
       <div className="flex justify-center">
-        <button onClick={() => router.push(`/shop`)} className="px-3 py-2 border-1 border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white mt-10 cursor-pointer rounded font-semibold">See All Products</button>
+        <button onClick={() => router.push(`/shop`)} className="px-3 py-2 border-1 border-[#FF6A1A] text-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white mt-10 cursor-pointer rounded font-semibold z-20">See All Products</button>
       </div>
       <div className="absolute top-10 right-10 -z-10 hidden lg:flex">
         <Image src="/images/pata.png" width={70} height={70} alt='pata' />

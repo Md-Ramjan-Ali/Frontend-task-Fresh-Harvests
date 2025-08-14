@@ -41,11 +41,11 @@ export default function SpecialOffer() {
   return (
     <section className=" bg-[url('/images/offer-bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row items-center justify-between gap-5">
       {/* Left Side */}
-      <div className="flex-1 p-3 lg:pl-20">
+      <div className="flex-1 p-3 lg:pl-20 overflow-visible">
         <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
           Special Offer
         </span>
-        <h1 className=" text-3xl md:text-5xl lg:text-7xl font-bold mt-3">Seasonal Fruit Bundle</h1>
+        <h1 className=" text-3xl md:text-5xl lg:text-6xl font-bold mt-3">Seasonal Fruit Bundle</h1>
         <p className="text-lg mt-2">
           Discount up to{" "}
           <span className="text-red-500 font-bold">80% OFF</span>
@@ -71,9 +71,9 @@ export default function SpecialOffer() {
 
         {/* Code */}
         <div className="mt-5">
-          <span className="bg-green-700 text-white px-5 py-2 rounded-full font-semibold">
-            CODE : <span className=""> FRESH28</span>
-          </span>
+          <h4 className="bg-green-700 text-white px-5 py-2 rounded-full text-xl md:text-2xl font-semibold w-fit">
+            CODE : <span className="text-[#FF6A1A]"> FRESH28</span>
+          </h4>
         </div>
       </div>
 

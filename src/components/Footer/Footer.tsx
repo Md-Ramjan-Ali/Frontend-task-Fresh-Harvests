@@ -69,15 +69,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200 mt-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4 font-bold">
-        <p className="text-sm">
-          © Copyright 2024, All Rights Reserved by Banana Studio
-        </p>
+      <div className="border-t border-gray-200 mt-8 py-4 flex flex-col md:flex-row-reverse justify-between items-center gap-4 font-bold">
+       
         <div className="flex gap-4 text-gray-600">
           <a href="#" className="bg-black text-white p-2 rounded-full"><FaTwitter /></a>
           <a href="#" className="bg-black text-white p-2 rounded-full"><FaFacebookF /></a>
           <a href="#" className="bg-black text-white p-2 rounded-full"><FaInstagram /></a>
         </div>
+        <p className="text-xs md:text-sm">
+          © Copyright 2024, All Rights Reserved by Banana Studio
+        </p>
       </div>
     </footer>
   );
