@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function SpecialOffer() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 5,
+    days: 3,
     hours: 18,
     minutes: 54,
     seconds: 21,

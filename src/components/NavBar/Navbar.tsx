@@ -33,7 +33,7 @@ export default function Navbar({ openNav }: props) {
         {/* navLinks */}
         <div className="hidden lg:flex items-center space-x-8">
           <Link href="/">Home</Link>
-          <Link href="/">Shop</Link>
+          <Link href="/shop">Shop</Link>
           <Link href="/">About</Link>
           <Link href="/blog">Blog</Link>
         </div>
