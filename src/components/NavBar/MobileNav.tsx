@@ -10,9 +10,10 @@ type props = {
   showNav: boolean,
   closeNav: () => void
   onProfileClick: () => void;
+  setIsRegistrationModalOpen: (isOpen: boolean) => void;
 }
 export default function MobileNav({ closeNav, showNav,
-  onProfileClick, }: props) {
+  onProfileClick, setIsRegistrationModalOpen }: props) {
   const { data: session } = useSession();
   const navOpen = showNav ? 'translate-x-0' : 'translate-x-[-100%]'
 
@@ -57,7 +58,10 @@ export default function MobileNav({ closeNav, showNav,
               </button>
             </>
           ) : (
-            <button className="text-lg text-white border-1 px-4 py-2 rounded-xl">
+            <button
+            onClick={() => {
+              setIsRegistrationModalOpen(true)}}
+            className="text-lg text-white border-1 px-4 py-2 rounded-xl">
               Sign in
             </button>
           )}

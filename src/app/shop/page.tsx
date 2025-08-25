@@ -21,7 +21,7 @@ export default function ShopPage() {
         {products.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {products.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg shadow-sm p-2 lg:p-4 text-center group cursor-pointer">
+              <div key={product.id} onClick={() => router.push(`/shop/${product.id}`)} className="bg-white rounded-lg shadow-sm p-2 lg:p-4 text-center group cursor-pointer">
                 {/* Product Image */}
                 <div className="w-full relative mb-3 bg-[#f2f5ec]  rounded-xl">
                   <Image src={product.images[0]} alt={product.productName} width={50} height={50} className="w-full h-40 object-center mb-2 p-5 lg:p-10" />
