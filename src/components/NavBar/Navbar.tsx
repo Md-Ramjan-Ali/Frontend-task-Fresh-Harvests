@@ -6,8 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import RegistrationModal from "./RegistrationModal";
-import LoginModal from "./LoginModal";
 
 import Avatar from "./Avatar";
 import { useSession } from "next-auth/react";
@@ -15,12 +13,11 @@ import { useSession } from "next-auth/react";
 type props = {
   openNav: () => void;
   onProfileClick?: () => void;
+  setIsRegistrationModalOpen: (isOpen: boolean) => void;
 };
-export default function Navbar({ openNav, onProfileClick }: props) {
+export default function Navbar({ openNav, onProfileClick, setIsRegistrationModalOpen }: props) {
   const [navBg, setNavBg] = useState(false);
-  const [isRegistrationModalOpen, setIsRegistrationModalOpen] =
-    useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  
 
   const { data: session } = useSession();
 
@@ -48,15 +45,7 @@ export default function Navbar({ openNav, onProfileClick }: props) {
       ? " font-semibold border-b-3 border-green-500 pb-1"
       : "hover:text-[#749b3f]";
 
-  const handleRegistrationSuccess = () => {
-    setIsRegistrationModalOpen(false);
-    setIsLoginModalOpen(true);
-  };
 
-  const handleLoginSuccess = () => {
-    setIsLoginModalOpen(false);
-    // User is now logged in, avatar will be shown
-  };
 
   const handleProfileClick = () => {
     if (onProfileClick) {
@@ -78,9 +67,9 @@ export default function Navbar({ openNav, onProfileClick }: props) {
             height={50}
             className="rounded-full"
           />
-          <h1 className="text-sm sm:text-xl lg:text-2xl font-bold">
+          <Link href='/'> <h1 className="text-xl lg:text-2xl font-bold">
             Fresh Harvests
-          </h1>
+          </h1></Link>
         </div>
         {/* navLinks */}
         <div className="hidden lg:flex items-center space-x-8">
@@ -164,25 +153,7 @@ export default function Navbar({ openNav, onProfileClick }: props) {
         </div>
       </div>
 
-      {/* Modals */}
-      <RegistrationModal
-        isOpen={isRegistrationModalOpen}
-        onClose={() => setIsRegistrationModalOpen(false)}
-        onSwitchToLogin={() => {
-          setIsRegistrationModalOpen(false);
-          setIsLoginModalOpen(true);
-        }}
-        onRegistrationSuccess={handleRegistrationSuccess}
-      />
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-        onSwitchToRegistration={() => {
-          setIsLoginModalOpen(false);
-          setIsRegistrationModalOpen(true);
-        }}
-        onLoginSuccess={handleLoginSuccess}
-      />
+      
     </div>
   );
 }
